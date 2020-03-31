@@ -74,8 +74,8 @@ String dataMessage;
 
 //#define USE_AP_MODE
 
-#define WIFI_SSID "Tesla"
-#define WIFI_PASSWORD "edison123"
+#define WIFI_SSID "YOUR_WIFI_NAME" //Replace with your SSID
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD" //Replace with Your Wifi Password
 #define CHANNEL_0 0
 #define IP5306_ADDR 0X75
 #define IP5306_REG_SYS_CTL0 0x00
@@ -114,7 +114,7 @@ Button2 *pBtns = nullptr;
 uint8_t g_btns[] = BUTTONS_MAP;
 int count;
 const char* url = "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=(Country_Region=%27India%27)&returnGeometry=false&outFields=Country_Region,Confirmed,Recovered,Deaths";
-const char* url2 = "https://api.thingspeak.com/apps/thinghttp/send_request?api_key=QDTVRQZGP6DCAFPW";
+const char* url2 = "https://api.thingspeak.com/apps/thinghttp/send_request?api_key=QDTVRQZGP6DCAFPW"; //Created on my thingspeak channel
 #define updateDelay 600000
 uint32_t lastUpdate = 0;
 
