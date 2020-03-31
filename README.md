@@ -17,7 +17,23 @@ Library Links:
 TTGO Epaper - https://github.com/lewisxhe/TTGO-EPaper-Series
 Arduino JSON (V6) - https://github.com/bblanchon/ArduinoJson (Old version may conflict, remove old version if it happens)
 
+url1: https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=(Country_Region=%27India%27)&returnGeometry=false&outFields=Country_Region,Confirmed,Recovered,Deaths
 
+The URL1 fetches data as JSON and parsed in the code. I didn't get statewise data, so got that from another website.
+
+Note: Make sure to fetch the data 10 minutes once or hourly once or even more delay. Otherwise the server may overload and block your IP by firewalls.
+
+url2: Steps for thingHTTP on thingspeak
+1. Got to Apps>ThingHTTP
+2. Create thingHTTP Set Method as GET and enter 
+URL as https://www.mohfw.gov.in/ 
+Parse String as //*[@id="cases"]/div/div/table/tbody/tr[23]/td[3]
+
+The Parse String can be get by goto the mohfw.gov.in website and right click on the data you want to display, and select inspect element. On the inspect element panel, again right click on the value and copy Xpath. Paste it somewhere and you can able to see the parse string like the above.
+
+3. Save thing and on next page you will get URL like this https://api.thingspeak.com/apps/thinghttp/send_request?api_key=QDTVRQZGP6DCAFPW
+
+4. Replace the URL in Arduino Code on url2 field
 
 
 
